@@ -16,5 +16,23 @@ public class Partido {
         golesVisitante = golvis;
     }
 
+    public void asignarPuntos(){
+        if (golesLocal > golesVisitante){
+            equipoLocal.victoria();
+        }
+        else if(golesLocal < golesVisitante){
+            equipoVisitante.victoria();
+        }
+        else{
+            equipoLocal.empate();
+            equipoVisitante.empate();
+        }
+    }
     
+    public void asignargoles(){
+        equipoLocal.contabilizarGoles(golesLocal, golesVisitante);
+        equipoVisitante.contabilizarGoles(golesVisitante, golesLocal);
+    }
+
+
 }

@@ -22,10 +22,13 @@ public class Torneo {
         
         if (equipoLocal != null && equipoVisitante != null) {
             Partido partidoNuevo = new Partido(equipoLocal, equipoVisitante, fecha, golesLocal, golesVisitante);
+            partidoNuevo.asignarPuntos();
             partidos.add(partidoNuevo);
         } else {
             System.out.println("Uno o ambos equipos no existen en el torneo.");
         }
+
+
     }
 
 
