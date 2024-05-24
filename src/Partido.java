@@ -6,6 +6,7 @@ public class Partido {
     private int golesLocal;
     private int golesVisitante;
     private LocalDate dia;
+    private Torneo torneo;
 
     public Partido(Equipo nombreLocal,Equipo nombreVisitante, LocalDate of, int golloc, int golvis){
         equipoLocal = nombreLocal;

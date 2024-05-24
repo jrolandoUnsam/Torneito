@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Torneo {
     private List<Equipo> equipos;
-    private List<Fecha> fechas;
+    private List<Partido> partidos;
 
     public Torneo(){
         equipos = new ArrayList<Equipo>();
-        fechas = new ArrayList<Fecha>();
+        partidos = new ArrayList<Partido>();
     }
 
     public void cargarEquipo(String nomb, int hinchas) {
@@ -22,7 +22,7 @@ public class Torneo {
         
         if (equipoLocal != null && equipoVisitante != null) {
             Partido partidoNuevo = new Partido(equipoLocal, equipoVisitante, fecha, golesLocal, golesVisitante);
-    
+            partidos.add(partidoNuevo);
         } else {
             System.out.println("Uno o ambos equipos no existen en el torneo.");
         }
@@ -31,11 +31,11 @@ public class Torneo {
 
     public Equipo buscarEquipoPorNombre(String nombre) {
         for (Equipo equipo : equipos) {
-            if (equipo.getNombre().equals(nombre)) {
+            if (equipo.getNombre() == nombre) {
                 return equipo;
             }
         }
-        return null; // Retorna null si no se encuentra ningún equipo con el nombre dado.
+        return null; // Mejor que tire una exception.
     }
 }
 
